@@ -1,5 +1,5 @@
 # MineSweeperFMX
-Mini game written on Delphi
+Mini game written on Delphi. For Windows and Android
 
 ## Preview
 
