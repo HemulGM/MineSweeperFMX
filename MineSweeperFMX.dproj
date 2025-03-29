@@ -338,7 +338,6 @@
             <FormType>fmx</FormType>
         </DCCReference>
         <DCCReference Include="FMXVibration\FMX.Vibrate.pas"/>
-        <DCCReference Include="MineSweeper.ThreadObjectList.pas"/>
         <DCCReference Include="HGM.FMX.Ani.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>

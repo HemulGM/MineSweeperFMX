@@ -8,7 +8,6 @@ uses
   FMX.Skia,
   MineSweeper.Main in 'MineSweeper.Main.pas' {FormMain},
   FMX.Vibrate in 'FMXVibration\FMX.Vibrate.pas',
-  MineSweeper.ThreadObjectList in 'MineSweeper.ThreadObjectList.pas',
   HGM.FMX.Ani in 'HGM.FMX.Ani.pas';
 
 {$R *.res}
