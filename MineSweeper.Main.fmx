@@ -5829,7 +5829,7 @@ object FormMain: TFormMain
     Size.Width = 499.000000000000000000
     Size.Height = 702.000000000000000000
     Size.PlatformDefault = False
-    TabIndex = 1
+    TabIndex = 0
     TabOrder = 2
     TabPosition = None
     OnChange = TabControlMainChange
@@ -5845,7 +5845,7 @@ object FormMain: TFormMain
         item
         end>
       TextSettings.Trimming = None
-      IsSelected = False
+      IsSelected = True
       Size.Width = 8.000000000000000000
       Size.Height = 8.000000000000000000
       Size.PlatformDefault = False
@@ -5860,7 +5860,6 @@ object FormMain: TFormMain
         TabOrder = 0
         object ScrollBoxField: TScrollBox
           Touch.InteractiveGestures = [Zoom, Pan]
-          OnGesture = ScrollBoxFieldGesture
           Align = Client
           Margins.Left = 15.000000000000000000
           Margins.Top = 15.000000000000000000
@@ -6073,6 +6072,7 @@ object FormMain: TFormMain
             TabOrder = 2
             Text = 'ABOUT'
             TextSettings.Trimming = None
+            OnClick = ButtonAboutClick
           end
         end
         object LayoutRestart: TLayout
@@ -8781,7 +8781,7 @@ object FormMain: TFormMain
         item
         end>
       TextSettings.Trimming = None
-      IsSelected = True
+      IsSelected = False
       Size.Width = 8.000000000000000000
       Size.Height = 8.000000000000000000
       Size.PlatformDefault = False

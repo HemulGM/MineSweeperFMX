@@ -12,6 +12,7 @@ uses
 type
   {$SCOPEDENUMS ON}
   TGameDifficult = (Easy, Normal, Hard, Expert);
+  {$SCOPEDENUMS OFF}
 
   TCellControl = TTextControl;
 
@@ -102,12 +103,12 @@ type
     procedure ButtonDiffUpClick(Sender: TObject);
     procedure ButtonGameMenuClick(Sender: TObject);
     procedure ButtonHideResultClick(Sender: TObject);
-    procedure ScrollBoxFieldGesture(Sender: TObject; const EventInfo: TGestureEventInfo; var Handled: Boolean);
     procedure ButtonVibrateLeftClick(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
     procedure TimerBombsTimer(Sender: TObject);
     procedure TabControlMainChange(Sender: TObject);
     procedure ButtonSoundLeftClick(Sender: TObject);
+    procedure ButtonAboutClick(Sender: TObject);
   private
     FField: TGameField;
     FSize: Byte;
@@ -212,13 +213,6 @@ begin
   CancelBombs;
 end;
 
-procedure TFormMain.CancelBombs;
-begin
-  TimerBombs.Enabled := False;
-  Inc(BombQueue);
-  FActivateBombList.Clear;
-end;
-
 procedure TFormMain.ButtonGameMenuClick(Sender: TObject);
 begin
   JumpToStart;
@@ -272,6 +266,11 @@ begin
   LabelFieldSize.Text := LabelFieldSize.Tag.ToString + 'x' + LabelFieldSize.Tag.ToString;
 end;
 
+procedure TFormMain.ButtonAboutClick(Sender: TObject);
+begin
+  ShowMessage('Created by HemulGM');
+end;
+
 procedure TFormMain.ButtonDiffDownClick(Sender: TObject);
 begin
   if LabelDificult.Tag <= 0 then
@@ -304,9 +303,7 @@ end;
 procedure TFormMain.ButtonSoundLeftClick(Sender: TObject);
 begin
   if LabelSound.Tag = 0 then
-  begin
-    LabelSound.Tag := 1;
-  end
+    LabelSound.Tag := 1
   else
     LabelSound.Tag := 0;
   Sound('open.mp3');
@@ -316,9 +313,7 @@ end;
 procedure TFormMain.ButtonVibrateLeftClick(Sender: TObject);
 begin
   if LabelVibrate.Tag = 0 then
-  begin
-    LabelVibrate.Tag := 1;
-  end
+    LabelVibrate.Tag := 1
   else
     LabelVibrate.Tag := 0;
   DoVibrate(200);
@@ -333,6 +328,13 @@ end;
 function TFormMain.GetSize: Integer;
 begin
   Result := LabelFieldSize.Tag;
+end;
+
+procedure TFormMain.CancelBombs;
+begin
+  TimerBombs.Enabled := False;
+  Inc(BombQueue);
+  FActivateBombList.Clear;
 end;
 
 procedure TFormMain.InternalActivateBomb(Button: TCellControl);
@@ -381,18 +383,6 @@ begin
       if not ((BX = 0) and (BY = 0)) then
         if IsValidCoords(X + BX, Y + BY) then
           Proc(FField[X + BX, Y + BY]);
-end;
-
-procedure TFormMain.ScrollBoxFieldGesture(Sender: TObject; const EventInfo: TGestureEventInfo; var Handled: Boolean);
-begin      {
-  if (EventInfo.GestureID = igiZoom) and (TInteractiveGestureFlag.gfBegin in EventInfo.Flags) then
-  begin
-    ButtonEndGame.Text := Round(EventInfo.Location.X).ToString + ':' + Round(EventInfo.Location.Y).ToString;
-  end;
-  if (EventInfo.GestureID = igiZoom) and (TInteractiveGestureFlag.gfInertia in EventInfo.Flags) then
-  begin
-    ButtonAuto.Text := Round(EventInfo.Location.X).ToString + ':' + Round(EventInfo.Location.Y).ToString;
-  end; }
 end;
 
 procedure TFormMain.Sound(const FileName: string);
@@ -598,9 +588,9 @@ begin
     TTask.Run(
       procedure
       begin
+        Sleep(Delay);
         for var i := 1 to 4 do
         begin
-          Sleep(Delay);
           if CurrentBombQueue <> BombQueue then
             Exit;
           TThread.Queue(nil,
@@ -610,6 +600,7 @@ begin
                 Exit;
               Sound('explosion.wav');
             end);
+          Sleep(Random(400 - 100) + 100);
         end;
       end);
     {$ENDIF}
@@ -621,7 +612,6 @@ begin
   if FField[X, Y].BombAround <> 0 then
   begin
     Btn.StyleLookup := 'cell_count';
-      //Btn.HitTest := False;
     Btn.StyledSettings := Btn.StyledSettings - [TStyledSetting.FontColor];
     Btn.FontColor := CountColors[FField[X, Y].BombAround];
     var Ani: TColorAnimation;
@@ -810,7 +800,7 @@ begin
   FSize := Size;
   FDifficult := Difficult;
   LabelTimer.Text := '1';
-    // array
+  // array
   SetLength(FField, Size, Size);
 
   FBombCount := 0;
@@ -860,7 +850,6 @@ begin
         Button.StyleLookup := 'cell_closed';
         Button.DisableDisappear := True;
         LayoutField.AddObject(Button);
-        //Button.ApplyStyleLookup;
         // array
         FField[X, Y].Button := Button;
         FField[X, Y].Closed := True;
@@ -876,8 +865,8 @@ begin
   Sound('start.mp3');
 
   // timer
-  FGameStarted := Now;
   Timer.Enabled := True;
+  FGameStarted := Now;
   TabControlMain.ActiveTab := TabItemGame;
 end;
 
@@ -934,7 +923,9 @@ begin
 end;
 
 initialization
+  {$IFDEF DEBUG}
   ReportMemoryLeaksOnShutdown := True;
+  {$ENDIF}
 
 end.
 
