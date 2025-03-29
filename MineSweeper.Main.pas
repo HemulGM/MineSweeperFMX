@@ -889,9 +889,7 @@ begin
     repeat
       X := Random(FSize - 1);
       Y := Random(FSize - 1);
-    until not FField[X, Y].Bomb;
-    if (X = ExX) and (Y = ExY) then
-      Continue;
+    until (not FField[X, Y].Bomb) and (not ((X = ExX) and (Y = ExY)));
     FField[X, Y].Bomb := True;
   end;
 

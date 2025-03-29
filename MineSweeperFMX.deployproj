@@ -119,7 +119,7 @@
             <Overwrite>True</Overwrite>
             <Required>True</Required>
         </DeployFile>
-        <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_LauncherIcon_72x72.png" Condition="'$(Config)'=='Debug'">
+        <DeployFile Include="$(ProjectName).Artwork\Android\FM_LauncherIcon_72x72.png" Condition="'$(Config)'=='Debug'">
             <RemoteDir>MineSweeperFMX\res\drawable-hdpi\</RemoteDir>
             <RemoteName>ic_launcher.png</RemoteName>
             <DeployClass>Android_LauncherIcon72</DeployClass>
@@ -128,7 +128,7 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_LauncherIcon_72x72.png" Condition="'$(Config)'=='Release'">
+        <DeployFile Include="$(ProjectName).Artwork\Android\FM_LauncherIcon_72x72.png" Condition="'$(Config)'=='Release'">
             <RemoteDir>MineSweeperFMX\res\drawable-hdpi\</RemoteDir>
             <RemoteName>ic_launcher.png</RemoteName>
             <DeployClass>Android_LauncherIcon72</DeployClass>
@@ -146,7 +146,7 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_LauncherIcon_48x48.png" Condition="'$(Config)'=='Debug'">
+        <DeployFile Include="$(ProjectName).Artwork\Android\FM_LauncherIcon_48x48.png" Condition="'$(Config)'=='Debug'">
             <RemoteDir>MineSweeperFMX\res\drawable-mdpi\</RemoteDir>
             <RemoteName>ic_launcher.png</RemoteName>
             <DeployClass>Android_LauncherIcon48</DeployClass>
@@ -155,7 +155,7 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_LauncherIcon_48x48.png" Condition="'$(Config)'=='Release'">
+        <DeployFile Include="$(ProjectName).Artwork\Android\FM_LauncherIcon_48x48.png" Condition="'$(Config)'=='Release'">
             <RemoteDir>MineSweeperFMX\res\drawable-mdpi\</RemoteDir>
             <RemoteName>ic_launcher.png</RemoteName>
             <DeployClass>Android_LauncherIcon48</DeployClass>
@@ -200,7 +200,7 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_SplashImage_640x480.png" Condition="'$(Config)'=='Debug'">
+        <DeployFile Include="$(ProjectName).Artwork\Android\FM_SplashImage_640x480.png" Condition="'$(Config)'=='Debug'">
             <RemoteDir>MineSweeperFMX\res\drawable-large\</RemoteDir>
             <RemoteName>splash_image.png</RemoteName>
             <DeployClass>Android_SplashImage640</DeployClass>
@@ -209,7 +209,7 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_AdaptiveIcon_Monochrome.xml" Condition="'$(Config)'=='Debug'">
+        <DeployFile Include="$(ProjectName).Artwork\Android\FM_AdaptiveIcon_Monochrome.xml" Condition="'$(Config)'=='Debug'">
             <RemoteDir>MineSweeperFMX\res\drawable\</RemoteDir>
             <RemoteName>ic_launcher_monochrome.xml</RemoteName>
             <DeployClass>Android_AdaptiveIconMonochrome</DeployClass>
@@ -218,7 +218,7 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_SplashImage_640x480.png" Condition="'$(Config)'=='Release'">
+        <DeployFile Include="$(ProjectName).Artwork\Android\FM_SplashImage_640x480.png" Condition="'$(Config)'=='Release'">
             <RemoteDir>MineSweeperFMX\res\drawable-large\</RemoteDir>
             <RemoteName>splash_image.png</RemoteName>
             <DeployClass>Android_SplashImage640</DeployClass>
@@ -227,7 +227,7 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_AdaptiveIcon_Monochrome.xml" Condition="'$(Config)'=='Release'">
+        <DeployFile Include="$(ProjectName).Artwork\Android\FM_AdaptiveIcon_Monochrome.xml" Condition="'$(Config)'=='Release'">
             <RemoteDir>MineSweeperFMX\res\drawable\</RemoteDir>
             <RemoteName>ic_launcher_monochrome.xml</RemoteName>
             <DeployClass>Android_AdaptiveIconMonochrome</DeployClass>
@@ -281,7 +281,7 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_VectorizedSplash.xml" Condition="'$(Config)'=='Debug'">
+        <DeployFile Include="$(ProjectName).Artwork\Android\FM_VectorizedSplash.xml" Condition="'$(Config)'=='Debug'">
             <RemoteDir>MineSweeperFMX\res\drawable\</RemoteDir>
             <RemoteName>splash_vector.xml</RemoteName>
             <DeployClass>Android_VectorizedSplash</DeployClass>
@@ -290,7 +290,7 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_VectorizedSplash.xml" Condition="'$(Config)'=='Release'">
+        <DeployFile Include="$(ProjectName).Artwork\Android\FM_VectorizedSplash.xml" Condition="'$(Config)'=='Release'">
             <RemoteDir>MineSweeperFMX\res\drawable\</RemoteDir>
             <RemoteName>splash_vector.xml</RemoteName>
             <DeployClass>Android_VectorizedSplash</DeployClass>
@@ -470,7 +470,7 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_VectorizedSplashV31.xml" Condition="'$(Config)'=='Debug'">
+        <DeployFile Include="$(ProjectName).Artwork\Android\FM_VectorizedSplashV31.xml" Condition="'$(Config)'=='Debug'">
             <RemoteDir>MineSweeperFMX\res\drawable-anydpi-v31\</RemoteDir>
             <RemoteName>splash_vector.xml</RemoteName>
             <DeployClass>Android_VectorizedSplashV31</DeployClass>
@@ -479,7 +479,7 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_VectorizedSplashV31.xml" Condition="'$(Config)'=='Release'">
+        <DeployFile Include="$(ProjectName).Artwork\Android\FM_VectorizedSplashV31.xml" Condition="'$(Config)'=='Release'">
             <RemoteDir>MineSweeperFMX\res\drawable-anydpi-v31\</RemoteDir>
             <RemoteName>splash_vector.xml</RemoteName>
             <DeployClass>Android_VectorizedSplashV31</DeployClass>
@@ -488,7 +488,7 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_VectorizedSplashDark.xml" Condition="'$(Config)'=='Debug'">
+        <DeployFile Include="$(ProjectName).Artwork\Android\FM_VectorizedSplashDark.xml" Condition="'$(Config)'=='Debug'">
             <RemoteDir>MineSweeperFMX\res\drawable-night-anydpi-v21\</RemoteDir>
             <RemoteName>splash_vector.xml</RemoteName>
             <DeployClass>Android_VectorizedSplashDark</DeployClass>
@@ -497,7 +497,7 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_VectorizedSplashDark.xml" Condition="'$(Config)'=='Release'">
+        <DeployFile Include="$(ProjectName).Artwork\Android\FM_VectorizedSplashDark.xml" Condition="'$(Config)'=='Release'">
             <RemoteDir>MineSweeperFMX\res\drawable-night-anydpi-v21\</RemoteDir>
             <RemoteName>splash_vector.xml</RemoteName>
             <DeployClass>Android_VectorizedSplashDark</DeployClass>
@@ -515,7 +515,7 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_LauncherIcon_192x192.png" Condition="'$(Config)'=='Debug'">
+        <DeployFile Include="$(ProjectName).Artwork\Android\FM_LauncherIcon_192x192.png" Condition="'$(Config)'=='Debug'">
             <RemoteDir>MineSweeperFMX\res\drawable-xxxhdpi\</RemoteDir>
             <RemoteName>ic_launcher.png</RemoteName>
             <DeployClass>Android_LauncherIcon192</DeployClass>
@@ -524,7 +524,7 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_LauncherIcon_192x192.png" Condition="'$(Config)'=='Release'">
+        <DeployFile Include="$(ProjectName).Artwork\Android\FM_LauncherIcon_192x192.png" Condition="'$(Config)'=='Release'">
             <RemoteDir>MineSweeperFMX\res\drawable-xxxhdpi\</RemoteDir>
             <RemoteName>ic_launcher.png</RemoteName>
             <DeployClass>Android_LauncherIcon192</DeployClass>
@@ -551,7 +551,7 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_NotificationIcon_48x48.png" Condition="'$(Config)'=='Debug'">
+        <DeployFile Include="$(ProjectName).Artwork\Android\FM_NotificationIcon_48x48.png" Condition="'$(Config)'=='Debug'">
             <RemoteDir>MineSweeperFMX\res\drawable-xhdpi\</RemoteDir>
             <RemoteName>ic_notification.png</RemoteName>
             <DeployClass>Android_NotificationIcon48</DeployClass>
@@ -560,7 +560,7 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_NotificationIcon_48x48.png" Condition="'$(Config)'=='Release'">
+        <DeployFile Include="$(ProjectName).Artwork\Android\FM_NotificationIcon_48x48.png" Condition="'$(Config)'=='Release'">
             <RemoteDir>MineSweeperFMX\res\drawable-xhdpi\</RemoteDir>
             <RemoteName>ic_notification.png</RemoteName>
             <DeployClass>Android_NotificationIcon48</DeployClass>
@@ -839,7 +839,7 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_SplashImage_470x320.png" Condition="'$(Config)'=='Debug'">
+        <DeployFile Include="$(ProjectName).Artwork\Android\FM_SplashImage_470x320.png" Condition="'$(Config)'=='Debug'">
             <RemoteDir>MineSweeperFMX\res\drawable-normal\</RemoteDir>
             <RemoteName>splash_image.png</RemoteName>
             <DeployClass>Android_SplashImage470</DeployClass>
@@ -848,7 +848,7 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_SplashImage_470x320.png" Condition="'$(Config)'=='Release'">
+        <DeployFile Include="$(ProjectName).Artwork\Android\FM_SplashImage_470x320.png" Condition="'$(Config)'=='Release'">
             <RemoteDir>MineSweeperFMX\res\drawable-normal\</RemoteDir>
             <RemoteName>splash_image.png</RemoteName>
             <DeployClass>Android_SplashImage470</DeployClass>
@@ -938,7 +938,7 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_LauncherIcon_144x144.png" Condition="'$(Config)'=='Debug'">
+        <DeployFile Include="$(ProjectName).Artwork\Android\FM_LauncherIcon_144x144.png" Condition="'$(Config)'=='Debug'">
             <RemoteDir>MineSweeperFMX\res\drawable-xxhdpi\</RemoteDir>
             <RemoteName>ic_launcher.png</RemoteName>
             <DeployClass>Android_LauncherIcon144</DeployClass>
@@ -947,7 +947,7 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_LauncherIcon_144x144.png" Condition="'$(Config)'=='Release'">
+        <DeployFile Include="$(ProjectName).Artwork\Android\FM_LauncherIcon_144x144.png" Condition="'$(Config)'=='Release'">
             <RemoteDir>MineSweeperFMX\res\drawable-xxhdpi\</RemoteDir>
             <RemoteName>ic_launcher.png</RemoteName>
             <DeployClass>Android_LauncherIcon144</DeployClass>
@@ -1046,7 +1046,7 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_NotificationIcon_96x96.png" Condition="'$(Config)'=='Debug'">
+        <DeployFile Include="$(ProjectName).Artwork\Android\FM_NotificationIcon_96x96.png" Condition="'$(Config)'=='Debug'">
             <RemoteDir>MineSweeperFMX\res\drawable-xxxhdpi\</RemoteDir>
             <RemoteName>ic_notification.png</RemoteName>
             <DeployClass>Android_NotificationIcon96</DeployClass>
@@ -1055,7 +1055,7 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_NotificationIcon_96x96.png" Condition="'$(Config)'=='Release'">
+        <DeployFile Include="$(ProjectName).Artwork\Android\FM_NotificationIcon_96x96.png" Condition="'$(Config)'=='Release'">
             <RemoteDir>MineSweeperFMX\res\drawable-xxxhdpi\</RemoteDir>
             <RemoteName>ic_notification.png</RemoteName>
             <DeployClass>Android_NotificationIcon96</DeployClass>
@@ -1100,7 +1100,7 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_LauncherIcon_36x36.png" Condition="'$(Config)'=='Debug'">
+        <DeployFile Include="$(ProjectName).Artwork\Android\FM_LauncherIcon_36x36.png" Condition="'$(Config)'=='Debug'">
             <RemoteDir>MineSweeperFMX\res\drawable-ldpi\</RemoteDir>
             <RemoteName>ic_launcher.png</RemoteName>
             <DeployClass>Android_LauncherIcon36</DeployClass>
@@ -1109,7 +1109,7 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_VectorizedSplashV31Dark.xml" Condition="'$(Config)'=='Debug'">
+        <DeployFile Include="$(ProjectName).Artwork\Android\FM_VectorizedSplashV31Dark.xml" Condition="'$(Config)'=='Debug'">
             <RemoteDir>MineSweeperFMX\res\drawable-night-anydpi-v31\</RemoteDir>
             <RemoteName>splash_vector.xml</RemoteName>
             <DeployClass>Android_VectorizedSplashV31Dark</DeployClass>
@@ -1118,7 +1118,7 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_LauncherIcon_36x36.png" Condition="'$(Config)'=='Release'">
+        <DeployFile Include="$(ProjectName).Artwork\Android\FM_LauncherIcon_36x36.png" Condition="'$(Config)'=='Release'">
             <RemoteDir>MineSweeperFMX\res\drawable-ldpi\</RemoteDir>
             <RemoteName>ic_launcher.png</RemoteName>
             <DeployClass>Android_LauncherIcon36</DeployClass>
@@ -1127,7 +1127,7 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_VectorizedSplashV31Dark.xml" Condition="'$(Config)'=='Release'">
+        <DeployFile Include="$(ProjectName).Artwork\Android\FM_VectorizedSplashV31Dark.xml" Condition="'$(Config)'=='Release'">
             <RemoteDir>MineSweeperFMX\res\drawable-night-anydpi-v31\</RemoteDir>
             <RemoteName>splash_vector.xml</RemoteName>
             <DeployClass>Android_VectorizedSplashV31Dark</DeployClass>
@@ -1145,7 +1145,7 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_VectorizedNotificationIcon.xml" Condition="'$(Config)'=='Debug'">
+        <DeployFile Include="$(ProjectName).Artwork\Android\FM_VectorizedNotificationIcon.xml" Condition="'$(Config)'=='Debug'">
             <RemoteDir>MineSweeperFMX\res\drawable-anydpi-v24\</RemoteDir>
             <RemoteName>ic_notification.xml</RemoteName>
             <DeployClass>Android_VectorizedNotificationIcon</DeployClass>
@@ -1154,7 +1154,7 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_VectorizedNotificationIcon.xml" Condition="'$(Config)'=='Release'">
+        <DeployFile Include="$(ProjectName).Artwork\Android\FM_VectorizedNotificationIcon.xml" Condition="'$(Config)'=='Release'">
             <RemoteDir>MineSweeperFMX\res\drawable-anydpi-v24\</RemoteDir>
             <RemoteName>ic_notification.xml</RemoteName>
             <DeployClass>Android_VectorizedNotificationIcon</DeployClass>
@@ -1191,7 +1191,7 @@
             <Overwrite>True</Overwrite>
             <Required>True</Required>
         </DeployFile>
-        <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_AdaptiveIcon_Foreground.xml" Condition="'$(Config)'=='Debug'">
+        <DeployFile Include="$(ProjectName).Artwork\Android\FM_AdaptiveIcon_Foreground.xml" Condition="'$(Config)'=='Debug'">
             <RemoteDir>MineSweeperFMX\res\drawable\</RemoteDir>
             <RemoteName>ic_launcher_foreground.xml</RemoteName>
             <DeployClass>Android_AdaptiveIconForeground</DeployClass>
@@ -1200,7 +1200,7 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_AdaptiveIcon_Foreground.xml" Condition="'$(Config)'=='Release'">
+        <DeployFile Include="$(ProjectName).Artwork\Android\FM_AdaptiveIcon_Foreground.xml" Condition="'$(Config)'=='Release'">
             <RemoteDir>MineSweeperFMX\res\drawable\</RemoteDir>
             <RemoteName>ic_launcher_foreground.xml</RemoteName>
             <DeployClass>Android_AdaptiveIconForeground</DeployClass>
@@ -1209,7 +1209,7 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_AdaptiveIcon_Background.xml" Condition="'$(Config)'=='Debug'">
+        <DeployFile Include="$(ProjectName).Artwork\Android\FM_AdaptiveIcon_Background.xml" Condition="'$(Config)'=='Debug'">
             <RemoteDir>MineSweeperFMX\res\drawable\</RemoteDir>
             <RemoteName>ic_launcher_background.xml</RemoteName>
             <DeployClass>Android_AdaptiveIconBackground</DeployClass>
@@ -1218,7 +1218,7 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_AdaptiveIcon_Background.xml" Condition="'$(Config)'=='Release'">
+        <DeployFile Include="$(ProjectName).Artwork\Android\FM_AdaptiveIcon_Background.xml" Condition="'$(Config)'=='Release'">
             <RemoteDir>MineSweeperFMX\res\drawable\</RemoteDir>
             <RemoteName>ic_launcher_background.xml</RemoteName>
             <DeployClass>Android_AdaptiveIconBackground</DeployClass>
@@ -1344,7 +1344,7 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_NotificationIcon_36x36.png" Condition="'$(Config)'=='Debug'">
+        <DeployFile Include="$(ProjectName).Artwork\Android\FM_NotificationIcon_36x36.png" Condition="'$(Config)'=='Debug'">
             <RemoteDir>MineSweeperFMX\res\drawable-hdpi\</RemoteDir>
             <RemoteName>ic_notification.png</RemoteName>
             <DeployClass>Android_NotificationIcon36</DeployClass>
@@ -1353,7 +1353,7 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_NotificationIcon_36x36.png" Condition="'$(Config)'=='Release'">
+        <DeployFile Include="$(ProjectName).Artwork\Android\FM_NotificationIcon_36x36.png" Condition="'$(Config)'=='Release'">
             <RemoteDir>MineSweeperFMX\res\drawable-hdpi\</RemoteDir>
             <RemoteName>ic_notification.png</RemoteName>
             <DeployClass>Android_NotificationIcon36</DeployClass>
@@ -1371,7 +1371,7 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_LauncherIcon_96x96.png" Condition="'$(Config)'=='Debug'">
+        <DeployFile Include="$(ProjectName).Artwork\Android\FM_LauncherIcon_96x96.png" Condition="'$(Config)'=='Debug'">
             <RemoteDir>MineSweeperFMX\res\drawable-xhdpi\</RemoteDir>
             <RemoteName>ic_launcher.png</RemoteName>
             <DeployClass>Android_LauncherIcon96</DeployClass>
@@ -1380,7 +1380,7 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_LauncherIcon_96x96.png" Condition="'$(Config)'=='Release'">
+        <DeployFile Include="$(ProjectName).Artwork\Android\FM_LauncherIcon_96x96.png" Condition="'$(Config)'=='Release'">
             <RemoteDir>MineSweeperFMX\res\drawable-xhdpi\</RemoteDir>
             <RemoteName>ic_launcher.png</RemoteName>
             <DeployClass>Android_LauncherIcon96</DeployClass>
@@ -1407,7 +1407,7 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_NotificationIcon_24x24.png" Condition="'$(Config)'=='Debug'">
+        <DeployFile Include="$(ProjectName).Artwork\Android\FM_NotificationIcon_24x24.png" Condition="'$(Config)'=='Debug'">
             <RemoteDir>MineSweeperFMX\res\drawable-mdpi\</RemoteDir>
             <RemoteName>ic_notification.png</RemoteName>
             <DeployClass>Android_NotificationIcon24</DeployClass>
@@ -1416,7 +1416,7 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_NotificationIcon_24x24.png" Condition="'$(Config)'=='Release'">
+        <DeployFile Include="$(ProjectName).Artwork\Android\FM_NotificationIcon_24x24.png" Condition="'$(Config)'=='Release'">
             <RemoteDir>MineSweeperFMX\res\drawable-mdpi\</RemoteDir>
             <RemoteName>ic_notification.png</RemoteName>
             <DeployClass>Android_NotificationIcon24</DeployClass>
@@ -1425,7 +1425,7 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_SplashImage_960x720.png" Condition="'$(Config)'=='Debug'">
+        <DeployFile Include="$(ProjectName).Artwork\Android\FM_SplashImage_960x720.png" Condition="'$(Config)'=='Debug'">
             <RemoteDir>MineSweeperFMX\res\drawable-xlarge\</RemoteDir>
             <RemoteName>splash_image.png</RemoteName>
             <DeployClass>Android_SplashImage960</DeployClass>
@@ -1434,7 +1434,7 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_SplashImage_960x720.png" Condition="'$(Config)'=='Release'">
+        <DeployFile Include="$(ProjectName).Artwork\Android\FM_SplashImage_960x720.png" Condition="'$(Config)'=='Release'">
             <RemoteDir>MineSweeperFMX\res\drawable-xlarge\</RemoteDir>
             <RemoteName>splash_image.png</RemoteName>
             <DeployClass>Android_SplashImage960</DeployClass>
@@ -1443,7 +1443,7 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_SplashImage_426x320.png" Condition="'$(Config)'=='Debug'">
+        <DeployFile Include="$(ProjectName).Artwork\Android\FM_SplashImage_426x320.png" Condition="'$(Config)'=='Debug'">
             <RemoteDir>MineSweeperFMX\res\drawable-small\</RemoteDir>
             <RemoteName>splash_image.png</RemoteName>
             <DeployClass>Android_SplashImage426</DeployClass>
@@ -1452,7 +1452,7 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_SplashImage_426x320.png" Condition="'$(Config)'=='Release'">
+        <DeployFile Include="$(ProjectName).Artwork\Android\FM_SplashImage_426x320.png" Condition="'$(Config)'=='Release'">
             <RemoteDir>MineSweeperFMX\res\drawable-small\</RemoteDir>
             <RemoteName>splash_image.png</RemoteName>
             <DeployClass>Android_SplashImage426</DeployClass>
@@ -1470,7 +1470,7 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_NotificationIcon_72x72.png" Condition="'$(Config)'=='Debug'">
+        <DeployFile Include="$(ProjectName).Artwork\Android\FM_NotificationIcon_72x72.png" Condition="'$(Config)'=='Debug'">
             <RemoteDir>MineSweeperFMX\res\drawable-xxhdpi\</RemoteDir>
             <RemoteName>ic_notification.png</RemoteName>
             <DeployClass>Android_NotificationIcon72</DeployClass>
@@ -1479,7 +1479,7 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_NotificationIcon_72x72.png" Condition="'$(Config)'=='Release'">
+        <DeployFile Include="$(ProjectName).Artwork\Android\FM_NotificationIcon_72x72.png" Condition="'$(Config)'=='Release'">
             <RemoteDir>MineSweeperFMX\res\drawable-xxhdpi\</RemoteDir>
             <RemoteName>ic_notification.png</RemoteName>
             <DeployClass>Android_NotificationIcon72</DeployClass>
