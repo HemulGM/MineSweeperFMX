@@ -1,0 +1,7 @@
+/__history/*
+/Android64/*
+/FMXVibration/__history/*
+*.dcu
+/Linux64/*
+*.exe
+*.zip
