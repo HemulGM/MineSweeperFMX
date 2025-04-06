@@ -5,11 +5,11 @@
         <FrameworkType>FMX</FrameworkType>
         <Base>True</Base>
         <Config Condition="'$(Config)'==''">Release</Config>
-        <Platform Condition="'$(Platform)'==''">Win32</Platform>
+        <Platform Condition="'$(Platform)'==''">Android64</Platform>
         <TargetedPlatforms>693395</TargetedPlatforms>
         <AppType>Application</AppType>
         <MainSource>MineSweeperFMX.dpr</MainSource>
-        <ProjectName Condition="'$(ProjectName)'==''">MineSweeperFMX</ProjectName>
+        <PlatformSDK Condition="'$(PlatformSDK)'=='' And '$(Platform)'=='Android64'">AndroidSDK25.2.5_64bit.sdk</PlatformSDK>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
         <Base>true</Base>
@@ -87,6 +87,12 @@
         <CfgParent>Base</CfgParent>
         <Base>true</Base>
     </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Android64' and '$(Cfg_2)'=='true') or '$(Cfg_2_Android64)'!=''">
+        <Cfg_2_Android64>true</Cfg_2_Android64>
+        <CfgParent>Cfg_2</CfgParent>
+        <Cfg_2>true</Cfg_2>
+        <Base>true</Base>
+    </PropertyGroup>
     <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Cfg_2)'=='true') or '$(Cfg_2_Win32)'!=''">
         <Cfg_2_Win32>true</Cfg_2_Win32>
         <CfgParent>Cfg_2</CfgParent>
@@ -121,6 +127,10 @@
         <SanitizedProjectName>MineSweeperFMX</SanitizedProjectName>
         <DCC_Define>SKIA;$(DCC_Define)</DCC_Define>
         <DCC_UnitSearchPath>FMXAudio\Sources;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
+        <OrientationPortrait>true</OrientationPortrait>
+        <OrientationPortraitUpsideDown>true</OrientationPortraitUpsideDown>
+        <OrientationLandscapeLeft>true</OrientationLandscapeLeft>
+        <OrientationLandscapeRight>true</OrientationLandscapeRight>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Android)'!=''">
         <DCC_UsePackage>fmx;DbxCommonDriver;bindengine;IndyIPCommon;emsclient;IndyProtocols;dbxcds;FmxTeeUI;FireDACSqliteDriver;DbxClientDriver;soapmidas;dbexpress;inet;FireDACDBXDriver;CustomIPTransport;LockBox3DR;IndySystem;FireDACCommon;emsserverresource;bindcompdbx;rtl;DBXSqliteDriver;DataSnapFireDAC;FireDAC;xmlrtl;dsnap;DataSnapNativeClient;emshosting;FireDACCommonDriver;RadiantShapesFmx_Design;IndyIPClient;emsedge;bindcompfmx;fmxFireDAC;DataSnapCommon;fmxase;DzHTMLText_FMX;dbrtl;DBXInterBaseDriver;RadiantShapesFmx;bindcomp;inetstn;IndyCore;RESTBackendComponents;RESTComponents;IndyIPServer;dsnapxml;DataSnapClient;DataSnapProviderClient;emsclientfiredac;FireDACDSDriver;tethering;CloudService;FMXTee;soaprtl;soapserver;FireDACIBDriver;$(DCC_UsePackage)</DCC_UsePackage>
@@ -180,7 +190,7 @@
         <Android_NotificationIcon72>$(ProjectName).Artwork\Android\FM_NotificationIcon_72x72.png</Android_NotificationIcon72>
         <Android_NotificationIcon96>$(ProjectName).Artwork\Android\FM_NotificationIcon_96x96.png</Android_NotificationIcon96>
         <IncludeAndroid_NotificationAccentColor>false</IncludeAndroid_NotificationAccentColor>
-        <EnabledSysJars>activity-1.7.2.dex.jar;annotation-experimental-1.3.0.dex.jar;annotation-jvm-1.6.0.dex.jar;annotations-13.0.dex.jar;appcompat-1.2.0.dex.jar;appcompat-resources-1.2.0.dex.jar;billing-6.0.1.dex.jar;biometric-1.1.0.dex.jar;browser-1.4.0.dex.jar;cloud-messaging.dex.jar;collection-1.1.0.dex.jar;concurrent-futures-1.1.0.dex.jar;core-1.10.1.dex.jar;core-common-2.2.0.dex.jar;core-ktx-1.10.1.dex.jar;core-runtime-2.2.0.dex.jar;cursoradapter-1.0.0.dex.jar;customview-1.0.0.dex.jar;documentfile-1.0.0.dex.jar;drawerlayout-1.0.0.dex.jar;error_prone_annotations-2.9.0.dex.jar;exifinterface-1.3.6.dex.jar;firebase-annotations-16.2.0.dex.jar;firebase-common-20.3.1.dex.jar;firebase-components-17.1.0.dex.jar;firebase-datatransport-18.1.7.dex.jar;firebase-encoders-17.0.0.dex.jar;firebase-encoders-json-18.0.0.dex.jar;firebase-encoders-proto-16.0.0.dex.jar;firebase-iid-interop-17.1.0.dex.jar;firebase-installations-17.1.3.dex.jar;firebase-installations-interop-17.1.0.dex.jar;firebase-measurement-connector-19.0.0.dex.jar;firebase-messaging-23.1.2.dex.jar;fmx.dex.jar;fragment-1.2.5.dex.jar;google-play-licensing.dex.jar;interpolator-1.0.0.dex.jar;javax.inject-1.dex.jar;kotlin-stdlib-1.8.22.dex.jar;kotlin-stdlib-common-1.8.22.dex.jar;kotlin-stdlib-jdk7-1.8.22.dex.jar;kotlin-stdlib-jdk8-1.8.22.dex.jar;kotlinx-coroutines-android-1.6.4.dex.jar;kotlinx-coroutines-core-jvm-1.6.4.dex.jar;legacy-support-core-utils-1.0.0.dex.jar;lifecycle-common-2.6.1.dex.jar;lifecycle-livedata-2.6.1.dex.jar;lifecycle-livedata-core-2.6.1.dex.jar;lifecycle-runtime-2.6.1.dex.jar;lifecycle-service-2.6.1.dex.jar;lifecycle-viewmodel-2.6.1.dex.jar;lifecycle-viewmodel-savedstate-2.6.1.dex.jar;listenablefuture-1.0.dex.jar;loader-1.0.0.dex.jar;localbroadcastmanager-1.0.0.dex.jar;okio-jvm-3.4.0.dex.jar;play-services-ads-22.2.0.dex.jar;play-services-ads-base-22.2.0.dex.jar;play-services-ads-identifier-18.0.0.dex.jar;play-services-ads-lite-22.2.0.dex.jar;play-services-appset-16.0.1.dex.jar;play-services-base-18.1.0.dex.jar;play-services-basement-18.1.0.dex.jar;play-services-cloud-messaging-17.0.1.dex.jar;play-services-location-21.0.1.dex.jar;play-services-maps-18.1.0.dex.jar;play-services-measurement-base-20.1.2.dex.jar;play-services-measurement-sdk-api-20.1.2.dex.jar;play-services-stats-17.0.2.dex.jar;play-services-tasks-18.0.2.dex.jar;print-1.0.0.dex.jar;profileinstaller-1.3.0.dex.jar;room-common-2.2.5.dex.jar;room-runtime-2.2.5.dex.jar;savedstate-1.2.1.dex.jar;sqlite-2.1.0.dex.jar;sqlite-framework-2.1.0.dex.jar;startup-runtime-1.1.1.dex.jar;tracing-1.0.0.dex.jar;transport-api-3.0.0.dex.jar;transport-backend-cct-3.1.8.dex.jar;transport-runtime-3.1.8.dex.jar;user-messaging-platform-2.0.0.dex.jar;vectordrawable-1.1.0.dex.jar;vectordrawable-animated-1.1.0.dex.jar;versionedparcelable-1.1.1.dex.jar;viewpager-1.0.0.dex.jar;work-runtime-2.7.0.dex.jar</EnabledSysJars>
+        <EnabledSysJars>activity-1.7.2.dex.jar;annotation-experimental-1.3.0.dex.jar;annotation-jvm-1.6.0.dex.jar;annotations-13.0.dex.jar;appcompat-1.2.0.dex.jar;appcompat-resources-1.2.0.dex.jar;cloud-messaging.dex.jar;collection-1.1.0.dex.jar;concurrent-futures-1.1.0.dex.jar;core-1.10.1.dex.jar;core-common-2.2.0.dex.jar;core-ktx-1.10.1.dex.jar;core-runtime-2.2.0.dex.jar;cursoradapter-1.0.0.dex.jar;customview-1.0.0.dex.jar;documentfile-1.0.0.dex.jar;drawerlayout-1.0.0.dex.jar;error_prone_annotations-2.9.0.dex.jar;exifinterface-1.3.6.dex.jar;fmx.dex.jar;fragment-1.2.5.dex.jar;interpolator-1.0.0.dex.jar;javax.inject-1.dex.jar;kotlin-stdlib-1.8.22.dex.jar;kotlin-stdlib-common-1.8.22.dex.jar;kotlin-stdlib-jdk7-1.8.22.dex.jar;kotlin-stdlib-jdk8-1.8.22.dex.jar;kotlinx-coroutines-android-1.6.4.dex.jar;kotlinx-coroutines-core-jvm-1.6.4.dex.jar;legacy-support-core-utils-1.0.0.dex.jar;lifecycle-common-2.6.1.dex.jar;lifecycle-livedata-2.6.1.dex.jar;lifecycle-livedata-core-2.6.1.dex.jar;lifecycle-runtime-2.6.1.dex.jar;lifecycle-service-2.6.1.dex.jar;lifecycle-viewmodel-2.6.1.dex.jar;lifecycle-viewmodel-savedstate-2.6.1.dex.jar;listenablefuture-1.0.dex.jar;loader-1.0.0.dex.jar;localbroadcastmanager-1.0.0.dex.jar;okio-jvm-3.4.0.dex.jar;profileinstaller-1.3.0.dex.jar;room-common-2.2.5.dex.jar;room-runtime-2.2.5.dex.jar;savedstate-1.2.1.dex.jar;sqlite-2.1.0.dex.jar;sqlite-framework-2.1.0.dex.jar;startup-runtime-1.1.1.dex.jar;tracing-1.0.0.dex.jar;transport-api-3.0.0.dex.jar;transport-backend-cct-3.1.8.dex.jar;transport-runtime-3.1.8.dex.jar;user-messaging-platform-2.0.0.dex.jar;vectordrawable-1.1.0.dex.jar;vectordrawable-animated-1.1.0.dex.jar;versionedparcelable-1.1.1.dex.jar;viewpager-1.0.0.dex.jar;work-runtime-2.7.0.dex.jar</EnabledSysJars>
         <AUP_VIBRATE>true</AUP_VIBRATE>
         <VerInfo_Build>1</VerInfo_Build>
         <IncludeAndroid_AdaptiveIcon>true</IncludeAndroid_AdaptiveIcon>
@@ -192,12 +202,13 @@
         <Android_AdaptiveIconForeground>$(ProjectName).Artwork\Android\FM_AdaptiveIcon_Foreground.xml</Android_AdaptiveIconForeground>
         <Android_DarkBackgroundColor>#744F30</Android_DarkBackgroundColor>
         <Android_VectorizedNotificationIcon>$(ProjectName).Artwork\Android\FM_VectorizedNotificationIcon.xml</Android_VectorizedNotificationIcon>
-        <Android_SplashGravity>center</Android_SplashGravity>
-        <Android_VectorizedSplashDark>$(ProjectName).Artwork\Android\FM_VectorizedSplashDark.xml</Android_VectorizedSplashDark>
-        <Android_NotificationAccentColor>#000000</Android_NotificationAccentColor>
         <Android_AdaptiveIconMonochrome>$(ProjectName).Artwork\Android\FM_AdaptiveIcon_Monochrome.xml</Android_AdaptiveIconMonochrome>
+        <Android_VectorizedSplashDark>$(ProjectName).Artwork\Android\FM_VectorizedSplashDark.xml</Android_VectorizedSplashDark>
+        <Android_SplashGravity>center</Android_SplashGravity>
+        <Android_NotificationAccentColor>#000000</Android_NotificationAccentColor>
         <Android_VectorizedSplashV31Dark>$(ProjectName).Artwork\Android\FM_VectorizedSplashV31Dark.xml</Android_VectorizedSplashV31Dark>
         <Android_VectorizedSplashV31>$(ProjectName).Artwork\Android\FM_VectorizedSplashV31.xml</Android_VectorizedSplashV31>
+        <DisabledSysJars>play-services-ads-22.2.0.dex.jar;play-services-ads-base-22.2.0.dex.jar;play-services-ads-identifier-18.0.0.dex.jar;play-services-ads-lite-22.2.0.dex.jar;play-services-appset-16.0.1.dex.jar;play-services-base-18.1.0.dex.jar;play-services-basement-18.1.0.dex.jar;play-services-cloud-messaging-17.0.1.dex.jar;play-services-maps-18.1.0.dex.jar;play-services-location-21.0.1.dex.jar;play-services-measurement-base-20.1.2.dex.jar;play-services-measurement-sdk-api-20.1.2.dex.jar;play-services-stats-17.0.2.dex.jar;play-services-tasks-18.0.2.dex.jar;print-1.0.0.dex.jar;google-play-licensing.dex.jar;firebase-messaging-23.1.2.dex.jar;firebase-measurement-connector-19.0.0.dex.jar;firebase-installations-interop-17.1.0.dex.jar;firebase-installations-17.1.3.dex.jar;firebase-iid-interop-17.1.0.dex.jar;firebase-encoders-proto-16.0.0.dex.jar;firebase-encoders-json-18.0.0.dex.jar;firebase-encoders-17.0.0.dex.jar;firebase-datatransport-18.1.7.dex.jar;firebase-components-17.1.0.dex.jar;firebase-common-20.3.1.dex.jar;firebase-annotations-16.2.0.dex.jar;billing-6.0.1.dex.jar;biometric-1.1.0.dex.jar;browser-1.4.0.dex.jar</DisabledSysJars>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_iOSDevice64)'!=''">
         <DCC_UsePackage>fmx;DbxCommonDriver;bindengine;IndyIPCommon;emsclient;IndyProtocols;dbxcds;FmxTeeUI;FireDACSqliteDriver;DbxClientDriver;soapmidas;dbexpress;inet;FireDACDBXDriver;CustomIPTransport;LockBox3DR;IndySystem;FireDACCommon;emsserverresource;bindcompdbx;rtl;DBXSqliteDriver;DataSnapFireDAC;FireDAC;xmlrtl;dsnap;DataSnapNativeClient;vc2;emshosting;FireDACCommonDriver;RadiantShapesFmx_Design;IndyIPClient;emsedge;bindcompfmx;fmxFireDAC;FrameViewer;DataSnapCommon;fmxase;DzHTMLText_FMX;dbrtl;DBXInterBaseDriver;RadiantShapesFmx;bindcomp;inetstn;IndyCore;RESTBackendComponents;RESTComponents;IndyIPServer;dsnapxml;DataSnapClient;DataSnapProviderClient;emsclientfiredac;FireDACDSDriver;tethering;CloudService;FMXTee;soaprtl;soapserver;FireDACIBDriver;$(DCC_UsePackage)</DCC_UsePackage>
@@ -325,6 +336,28 @@
         <DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
         <DCC_DebugInformation>0</DCC_DebugInformation>
     </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2_Android64)'!=''">
+        <AUP_INTERNET>false</AUP_INTERNET>
+        <AUP_ACCESS_COARSE_LOCATION>false</AUP_ACCESS_COARSE_LOCATION>
+        <AUP_ACCESS_FINE_LOCATION>false</AUP_ACCESS_FINE_LOCATION>
+        <AUP_CALL_PHONE>false</AUP_CALL_PHONE>
+        <AUP_CAMERA>false</AUP_CAMERA>
+        <AUP_READ_PHONE_STATE>false</AUP_READ_PHONE_STATE>
+        <Android_CompressDexFiles>true</Android_CompressDexFiles>
+        <Android_CompressLibFiles>true</Android_CompressLibFiles>
+        <AUP_WRITE_EXTERNAL_STORAGE>false</AUP_WRITE_EXTERNAL_STORAGE>
+        <VerInfo_Build>1</VerInfo_Build>
+        <IncludeAndroid_AdaptiveIcon>true</IncludeAndroid_AdaptiveIcon>
+        <IncludeAndroid_VectorizedSplash>true</IncludeAndroid_VectorizedSplash>
+        <Android_BackgroundColor>#744F30</Android_BackgroundColor>
+        <Android_DarkBackgroundColor>#744F30</Android_DarkBackgroundColor>
+        <IncludeAndroid_NotificationAccentColor>false</IncludeAndroid_NotificationAccentColor>
+        <IncludeAndroid_VectorizedNotificationIcon>true</IncludeAndroid_VectorizedNotificationIcon>
+        <DCC_GenerateAndroidAppBundleFile>true</DCC_GenerateAndroidAppBundleFile>
+        <PF_KeyStore>Android64\Store1.keystore</PF_KeyStore>
+        <PF_KeyStorePass>852E47FF5FBE07BACF62E567A4037BF3E41508107EECECF19F500FFA8E613CC1DB2AA38CE3111C2FC1E2573AFACFC36BBAE83658042922D216784587E5FC22A2C924F30FD545FA8FBFBBAF5307131D6A921D3E581DAE0939E3EC</PF_KeyStorePass>
+        <PF_AliasKey>msaab</PF_AliasKey>
+    </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
         <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
@@ -440,6 +473,7 @@
                 </DeployFile>
                 <DeployFile LocalName="$(BDS)\lib\android\debug\armeabi-v7a\libnative-activity.so" Configuration="Release" Class="AndroidLibnativeArmeabiv7aFile">
                     <Platform Name="Android64">
+                        <Enabled>false</Enabled>
                         <RemoteName>libMineSweeperFMX.so</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
@@ -452,6 +486,7 @@
                 </DeployFile>
                 <DeployFile LocalName="$(BDS)\lib\android\debug\armeabi\libnative-activity.so" Configuration="Release" Class="AndroidLibnativeArmeabiFile">
                     <Platform Name="Android64">
+                        <Enabled>false</Enabled>
                         <RemoteName>libMineSweeperFMX.so</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
@@ -464,6 +499,7 @@
                 </DeployFile>
                 <DeployFile LocalName="$(BDS)\lib\android\debug\mips\libnative-activity.so" Configuration="Release" Class="AndroidLibnativeMipsFile">
                     <Platform Name="Android64">
+                        <Enabled>false</Enabled>
                         <RemoteName>libMineSweeperFMX.so</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
@@ -1039,6 +1075,7 @@
                 <DeployFile LocalName="FMXAudio\Bin\Android\Lib\arm64\libbass.so" Configuration="Debug" Class="File">
                     <Platform Name="Android64">
                         <RemoteDir>library\lib\arm64\</RemoteDir>
+                        <Enabled>false</Enabled>
                         <RemoteName>libbass.so</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
@@ -1046,6 +1083,7 @@
                 <DeployFile LocalName="FMXAudio\Bin\Android\Lib\arm64\libbass.so" Configuration="Release" Class="File">
                     <Platform Name="Android64">
                         <RemoteDir>library\lib\arm64\</RemoteDir>
+                        <Enabled>false</Enabled>
                         <RemoteName>libbass.so</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
@@ -1053,6 +1091,7 @@
                 <DeployFile LocalName="FMXAudio\Bin\Android\Lib\arm64\libbass_ssl.so" Configuration="Debug" Class="File">
                     <Platform Name="Android64">
                         <RemoteDir>library\lib\arm64\</RemoteDir>
+                        <Enabled>false</Enabled>
                         <RemoteName>libbass_ssl.so</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
@@ -1060,6 +1099,7 @@
                 <DeployFile LocalName="FMXAudio\Bin\Android\Lib\arm64\libbass_ssl.so" Configuration="Release" Class="File">
                     <Platform Name="Android64">
                         <RemoteDir>library\lib\arm64\</RemoteDir>
+                        <Enabled>false</Enabled>
                         <RemoteName>libbass_ssl.so</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
@@ -1067,6 +1107,7 @@
                 <DeployFile LocalName="FMXAudio\Bin\Android\Lib\arm64\libbassenc.so" Configuration="Debug" Class="File">
                     <Platform Name="Android64">
                         <RemoteDir>library\lib\arm64\</RemoteDir>
+                        <Enabled>false</Enabled>
                         <RemoteName>libbassenc.so</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
@@ -1074,6 +1115,7 @@
                 <DeployFile LocalName="FMXAudio\Bin\Android\Lib\arm64\libbassenc.so" Configuration="Release" Class="File">
                     <Platform Name="Android64">
                         <RemoteDir>library\lib\arm64\</RemoteDir>
+                        <Enabled>false</Enabled>
                         <RemoteName>libbassenc.so</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
@@ -1081,6 +1123,7 @@
                 <DeployFile LocalName="FMXAudio\Bin\Android\Lib\arm64\libbassenc_flac.so" Configuration="Debug" Class="File">
                     <Platform Name="Android64">
                         <RemoteDir>library\lib\arm64\</RemoteDir>
+                        <Enabled>false</Enabled>
                         <RemoteName>libbassenc_flac.so</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
@@ -1088,6 +1131,7 @@
                 <DeployFile LocalName="FMXAudio\Bin\Android\Lib\arm64\libbassenc_flac.so" Configuration="Release" Class="File">
                     <Platform Name="Android64">
                         <RemoteDir>library\lib\arm64\</RemoteDir>
+                        <Enabled>false</Enabled>
                         <RemoteName>libbassenc_flac.so</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
@@ -1095,6 +1139,7 @@
                 <DeployFile LocalName="FMXAudio\Bin\Android\Lib\arm64\libbassenc_mp3.so" Configuration="Debug" Class="File">
                     <Platform Name="Android64">
                         <RemoteDir>library\lib\arm64\</RemoteDir>
+                        <Enabled>false</Enabled>
                         <RemoteName>libbassenc_mp3.so</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
@@ -1102,6 +1147,7 @@
                 <DeployFile LocalName="FMXAudio\Bin\Android\Lib\arm64\libbassenc_mp3.so" Configuration="Release" Class="File">
                     <Platform Name="Android64">
                         <RemoteDir>library\lib\arm64\</RemoteDir>
+                        <Enabled>false</Enabled>
                         <RemoteName>libbassenc_mp3.so</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
@@ -1109,6 +1155,7 @@
                 <DeployFile LocalName="FMXAudio\Bin\Android\Lib\arm64\libbassenc_ogg.so" Configuration="Debug" Class="File">
                     <Platform Name="Android64">
                         <RemoteDir>library\lib\arm64\</RemoteDir>
+                        <Enabled>false</Enabled>
                         <RemoteName>libbassenc_ogg.so</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
@@ -1116,6 +1163,7 @@
                 <DeployFile LocalName="FMXAudio\Bin\Android\Lib\arm64\libbassenc_ogg.so" Configuration="Release" Class="File">
                     <Platform Name="Android64">
                         <RemoteDir>library\lib\arm64\</RemoteDir>
+                        <Enabled>false</Enabled>
                         <RemoteName>libbassenc_ogg.so</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
@@ -1123,6 +1171,7 @@
                 <DeployFile LocalName="FMXAudio\Bin\Android\Lib\arm64\libbassenc_opus.so" Configuration="Debug" Class="File">
                     <Platform Name="Android64">
                         <RemoteDir>library\lib\arm64\</RemoteDir>
+                        <Enabled>false</Enabled>
                         <RemoteName>libbassenc_opus.so</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
@@ -1130,6 +1179,7 @@
                 <DeployFile LocalName="FMXAudio\Bin\Android\Lib\arm64\libbassenc_opus.so" Configuration="Release" Class="File">
                     <Platform Name="Android64">
                         <RemoteDir>library\lib\arm64\</RemoteDir>
+                        <Enabled>false</Enabled>
                         <RemoteName>libbassenc_opus.so</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
@@ -1137,6 +1187,7 @@
                 <DeployFile LocalName="FMXAudio\Bin\Android\Lib\arm64\libbassflac.so" Configuration="Debug" Class="File">
                     <Platform Name="Android64">
                         <RemoteDir>library\lib\arm64\</RemoteDir>
+                        <Enabled>false</Enabled>
                         <RemoteName>libbassflac.so</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
@@ -1144,6 +1195,7 @@
                 <DeployFile LocalName="FMXAudio\Bin\Android\Lib\arm64\libbassflac.so" Configuration="Release" Class="File">
                     <Platform Name="Android64">
                         <RemoteDir>library\lib\arm64\</RemoteDir>
+                        <Enabled>false</Enabled>
                         <RemoteName>libbassflac.so</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>

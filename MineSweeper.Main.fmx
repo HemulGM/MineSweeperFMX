@@ -22,7 +22,8 @@ object FormMain: TFormMain
   StyleBook = StyleBook
   FormFactor.Width = 320
   FormFactor.Height = 480
-  FormFactor.Devices = [Desktop]
+  FormFactor.Orientations = [Portrait, Landscape, InvertedPortrait, InvertedLandscape]
+  FormFactor.Devices = [Desktop, iPhone, iPad]
   OnCreate = FormCreate
   OnDestroy = FormDestroy
   DesignerMasterStyle = 0
@@ -5852,30 +5853,152 @@ object FormMain: TFormMain
       StyleLookup = ''
       TabOrder = 0
       Text = 'TabItemGame'
+      ExplicitSize.cx = 8.000000000000000000
+      ExplicitSize.cy = 8.000000000000000000
       object LayoutGame: TLayout
         Align = Contents
         Size.Width = 499.000000000000000000
         Size.Height = 702.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 0
-        object ScrollBoxField: TScrollBox
-          Touch.InteractiveGestures = [Zoom, Pan]
+        object LayoutScrollField: TLayout
           Align = Client
-          Margins.Left = 15.000000000000000000
-          Margins.Top = 15.000000000000000000
-          Margins.Right = 15.000000000000000000
-          Margins.Bottom = 15.000000000000000000
-          Size.Width = 469.000000000000000000
-          Size.Height = 542.000000000000000000
+          Size.Width = 499.000000000000000000
+          Size.Height = 572.000000000000000000
           Size.PlatformDefault = False
-          TabOrder = 1
-          DisableMouseWheel = True
-          ShowScrollBars = False
-          Viewport.Width = 469.000000000000000000
-          Viewport.Height = 542.000000000000000000
-          object LayoutField: TLayout
-            Align = Center
-            TabOrder = 0
+          TabOrder = 3
+          object ScrollBoxField: TScrollBox
+            Touch.InteractiveGestures = [Zoom, Pan]
+            Align = Client
+            Size.Width = 469.000000000000000000
+            Size.Height = 542.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 1
+            DisableMouseWheel = True
+            ShowScrollBars = False
+            OnViewportPositionChange = ScrollBoxFieldViewportPositionChange
+            Viewport.Width = 469.000000000000000000
+            Viewport.Height = 542.000000000000000000
+            object LayoutField: TLayout
+              Align = Center
+              TabOrder = 0
+            end
+          end
+          object LayoutScrollLeft: TLayout
+            Align = Left
+            Position.Y = 15.000000000000000000
+            Size.Width = 15.000000000000000000
+            Size.Height = 542.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 5
+            object PathSL: TPath
+              Align = Center
+              Data.Path = {
+                160000000000000000005041964363410200000000005041DF186C4102000000
+                29D64841B64273410200000000004041B64273410200000042583C41B6427341
+                02000000B9CC3841500272410200000064F43541D2B66F4101000000F7C5D440
+                94AC3241020000001626C040BA582A410200000051EEBC406D3C1B4102000000
+                0496CD407DEC1041020000007CB8CF40239A0F41020000004321D240C0650E41
+                02000000F7C5D44084540D410100000064F43541BE9CA0400200000022D53C41
+                3884954002000000D9E7464141AC9740020000001C744C41BE6DA54002000000
+                2DBF4E415B1DAB40020000008DFF4F41E432B24002000000000050410681B940
+                030000000000504196436341}
+              Fill.Color = claWhite
+              HitTest = False
+              Opacity = 0.500000000000000000
+              Size.Width = 15.000000000000000000
+              Size.Height = 15.000000000000000000
+              Size.PlatformDefault = False
+              Stroke.Kind = None
+              WrapMode = Fit
+            end
+          end
+          object LayoutScrollRight: TLayout
+            Align = Right
+            Position.X = 484.000000000000000000
+            Position.Y = 15.000000000000000000
+            Size.Width = 15.000000000000000000
+            Size.Height = 542.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 4
+            object PathSR: TPath
+              Align = Center
+              Data.Path = {
+                16000000000000000000E04096436341020000000000E040DF186C4102000000
+                AF53EE40B64273410200000000000041B642734102000000BEA70341B6427341
+                020000004733074150027241020000009C0B0A41D2B66F4101000000049D5541
+                94AC324102000000F5EC5F41BA582A4102000000D88861416E3C1B4102000000
+                FE3459417DEC104102000000C2235841239A0F41020000005FEF5641C0650E41
+                02000000049D554184540D41010000004A0C0A41D7A3A04002000000D92B0341
+                908A9540020000002632F2407DB1974002000000E018E7405F72A54002000000
+                5883E2409A20AB40020000004402E0405834B240020000000000E0400581B940
+                030000000000E04096436341}
+              Fill.Color = claWhite
+              HitTest = False
+              Opacity = 0.500000000000000000
+              Size.Width = 15.000000000000000000
+              Size.Height = 15.000000000000000000
+              Size.PlatformDefault = False
+              Stroke.Kind = None
+              WrapMode = Fit
+            end
+          end
+          object LayoutScrollTop: TLayout
+            Align = Top
+            Size.Width = 499.000000000000000000
+            Size.Height = 15.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 3
+            object PathST: TPath
+              Align = Center
+              Data.Path = {
+                16000000000000000681B9402B875E4102000000B5D4A740B0865E4102000000
+                CE819940745C574102000000C58299404B864E41020000002B8399408DDE4A41
+                020000005A049C401653474102000000A69BA040E17A444101000000F8530D41
+                F1D2F14002000000D2A715411033DD40020000001FC424414BFBD94002000000
+                0F142F41FEA2EA40020000006966304176C5EC4002000000CC9A31413D2EEF40
+                0200000008AC3241F1D2F1400100000046B66F41E17A444102000000E8427541
+                525B4B4102000000712F7441186E554102000000004F6D41BBFA5A4102000000
+                CB766A4160465D410200000054EB6641F8865E4102000000964363412B875E41
+                030000000681B9402B875E41}
+              Fill.Color = claWhite
+              HitTest = False
+              Opacity = 0.500000000000000000
+              Size.Width = 15.000000000000000000
+              Size.Height = 15.000000000000000000
+              Size.PlatformDefault = False
+              Stroke.Kind = None
+              WrapMode = Fit
+            end
+          end
+          object LayoutScrollBottom: TLayout
+            Align = Bottom
+            Position.Y = 557.000000000000000000
+            Size.Width = 499.000000000000000000
+            Size.Height = 15.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 2
+            object PathSB: TPath
+              Align = Center
+              Data.Path = {
+                16000000000000000681B9400000E04002000000B5D4A740F700E04002000000
+                CE8199406E55EE4002000000C5829940E0000041020000002B8399409EA80341
+                020000005A049C401534074102000000A69BA0404A0C0A4101000000F8530D41
+                B29D554102000000D2A71541A3ED5F41020000001FC424418689614102000000
+                0F142F41AC35594102000000696630417024584102000000CC9A31410DF05641
+                0200000008AC3241B29D55410100000046B66F414A0C0A4102000000E8427541
+                D92B034102000000712F74412632F24002000000004F6D41E118E74002000000
+                CB766A419581E2400200000054EB66416600E04002000000964363410000E040
+                030000000681B9400000E040}
+              Fill.Color = claWhite
+              HitTest = False
+              Opacity = 0.500000000000000000
+              Size.Width = 15.000000000000000000
+              Size.Height = 15.000000000000000000
+              Size.PlatformDefault = False
+              Stroke.Kind = None
+              WrapMode = Fit
+            end
           end
         end
         object LayoutGameHead: TLayout
@@ -5887,7 +6010,7 @@ object FormMain: TFormMain
           Size.Width = 499.000000000000000000
           Size.Height = 50.000000000000000000
           Size.PlatformDefault = False
-          TabOrder = 2
+          TabOrder = 1
           object Rectangle1: TRectangle
             Align = Contents
             Fill.Color = x32000000
@@ -6112,7 +6235,7 @@ object FormMain: TFormMain
           Size.Width = 499.000000000000000000
           Size.Height = 191.000000000000000000
           Size.PlatformDefault = False
-          TabOrder = 3
+          TabOrder = 2
           object RectangleWin: TRectangle
             Align = Client
             Fill.Color = xC8C7F08D
@@ -8788,6 +8911,8 @@ object FormMain: TFormMain
       StyleLookup = ''
       TabOrder = 0
       Text = 'TabItemStart'
+      ExplicitSize.cx = 8.000000000000000000
+      ExplicitSize.cy = 8.000000000000000000
       object LayoutMenu: TLayout
         Align = Center
         Size.Width = 277.000000000000000000
@@ -9071,6 +9196,8 @@ object FormMain: TFormMain
       StyleLookup = ''
       TabOrder = 0
       Text = 'TabItemRecords'
+      ExplicitSize.cx = 8.000000000000000000
+      ExplicitSize.cy = 8.000000000000000000
       object Layout7: TLayout
         Position.X = 264.000000000000000000
         Position.Y = 328.000000000000000000

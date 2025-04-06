@@ -5,3 +5,5 @@
 /Linux64/*
 *.exe
 *.zip
+/Android/Release/*
+*.~*

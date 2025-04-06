@@ -9,6 +9,12 @@ uses
   FMX.SpinBox, FMX.ListBox, FMX.Ani, System.Skia, FMX.Skia, FMX.TabControl,
   FMX.Objects, FMX.Player, System.Generics.Collections;
 
+
+
+{$IF DEFINED(ANDROID) OR DEFINED(IOS)}
+  {$DEFINE MOBILE}
+{$ENDIF}
+
 type
   {$SCOPEDENUMS ON}
   TGameDifficult = (Easy, Normal, Hard, Expert);
@@ -93,6 +99,15 @@ type
     LabelSound: TLabel;
     ButtonSoundRight: TButton;
     Label8: TLabel;
+    LayoutScrollField: TLayout;
+    LayoutScrollLeft: TLayout;
+    LayoutScrollRight: TLayout;
+    LayoutScrollTop: TLayout;
+    LayoutScrollBottom: TLayout;
+    PathST: TPath;
+    PathSR: TPath;
+    PathSL: TPath;
+    PathSB: TPath;
     procedure ButtonNewGameClick(Sender: TObject);
     procedure TimerTimer(Sender: TObject);
     procedure FormCreate(Sender: TObject);
@@ -109,6 +124,7 @@ type
     procedure TabControlMainChange(Sender: TObject);
     procedure ButtonSoundLeftClick(Sender: TObject);
     procedure ButtonAboutClick(Sender: TObject);
+    procedure ScrollBoxFieldViewportPositionChange(Sender: TObject; const OldViewportPosition, NewViewportPosition: TPointF; const ContentSizeChanged: Boolean);
   private
     FField: TGameField;
     FSize: Byte;
@@ -383,6 +399,23 @@ begin
       if not ((BX = 0) and (BY = 0)) then
         if IsValidCoords(X + BX, Y + BY) then
           Proc(FField[X + BX, Y + BY]);
+end;
+
+procedure TFormMain.ScrollBoxFieldViewportPositionChange(Sender: TObject; const OldViewportPosition, NewViewportPosition: TPointF; const ContentSizeChanged: Boolean);
+begin
+  PathST.Visible :=
+        (ScrollBoxField.ContentBounds.Height > ScrollBoxField.Height) and
+        (ScrollBoxField.ViewportPosition.Y > (ScrollBoxField.Height - ScrollBoxField.ContentBounds.Height) / 2 + 10);
+  PathSB.Visible :=
+        (ScrollBoxField.ContentBounds.Height > ScrollBoxField.Height) and
+        (ScrollBoxField.ViewportPosition.Y < (ScrollBoxField.ContentBounds.Height - ScrollBoxField.Height) / 2 - 10);
+
+  PathSL.Visible :=
+        (ScrollBoxField.ContentBounds.Width > ScrollBoxField.Width) and
+        (ScrollBoxField.ViewportPosition.X > (ScrollBoxField.Width - ScrollBoxField.ContentBounds.Width) / 2 + 10);
+  PathSR.Visible :=
+        (ScrollBoxField.ContentBounds.Width > ScrollBoxField.Width) and
+        (ScrollBoxField.ViewportPosition.X < (ScrollBoxField.ContentBounds.Width - ScrollBoxField.Width) / 2 - 10);
 end;
 
 procedure TFormMain.Sound(const FileName: string);
@@ -738,12 +771,12 @@ end;
 procedure TFormMain.FormCreate(Sender: TObject);
 begin
   ScrollBoxField.AniCalculations.Animation := True;
-  ScrollBoxField.AniCalculations.BoundsAnimation := True;
+  ScrollBoxField.AniCalculations.BoundsAnimation := False;
   ScrollBoxField.AniCalculations.TouchTracking := [TTouchTrackingItem.ttVertical, TTouchTrackingItem.ttHorizontal];
   FActivateBombList := TList<TCellControl>.Create;
   FPlayer := TFMXCustomPlayer.Create(Self);
   FPlayer.Init;
-  {$IFDEF ANDROID}
+  {$IFDEF MOBILE}
   LabelFieldSize.Tag := 9;
   {$ELSE}
   LabelFieldSize.Tag := 10;
@@ -835,7 +868,7 @@ begin
         Button.TextSettings.VertAlign := TTextAlign.Center;
         Button.Text := '';
         Button.HitTest := True;
-        {$IFDEF ANDROID}
+        {$IFDEF MOBILE}
         Button.OnTap := FOnTapEvent;
         Button.OnGesture := FOnGesture;
         Button.Touch.InteractiveGestures := [TInteractiveGesture.LongTap, TInteractiveGesture.DoubleTap];
