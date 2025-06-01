@@ -1,11 +1,11 @@
 ﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
     <PropertyGroup>
         <ProjectGuid>{7C9B5F09-1993-4E17-ADF4-E4B31B86A6FA}</ProjectGuid>
-        <ProjectVersion>20.2</ProjectVersion>
+        <ProjectVersion>20.3</ProjectVersion>
         <FrameworkType>FMX</FrameworkType>
         <Base>True</Base>
         <Config Condition="'$(Config)'==''">Release</Config>
-        <Platform Condition="'$(Platform)'==''">Android64</Platform>
+        <Platform Condition="'$(Platform)'==''">Linux64</Platform>
         <TargetedPlatforms>693395</TargetedPlatforms>
         <AppType>Application</AppType>
         <MainSource>MineSweeperFMX.dpr</MainSource>
@@ -126,7 +126,7 @@
         <Icns_MainIcns>$(BDS)\bin\delphi_PROJECTICNS.icns</Icns_MainIcns>
         <SanitizedProjectName>MineSweeperFMX</SanitizedProjectName>
         <DCC_Define>SKIA;$(DCC_Define)</DCC_Define>
-        <DCC_UnitSearchPath>FMXAudio\Sources;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
+        <DCC_UnitSearchPath>FMXAudio\Sources;FMXVibration;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
         <OrientationPortrait>true</OrientationPortrait>
         <OrientationPortraitUpsideDown>true</OrientationPortraitUpsideDown>
         <OrientationLandscapeLeft>true</OrientationLandscapeLeft>
@@ -134,7 +134,7 @@
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Android)'!=''">
         <DCC_UsePackage>fmx;DbxCommonDriver;bindengine;IndyIPCommon;emsclient;IndyProtocols;dbxcds;FmxTeeUI;FireDACSqliteDriver;DbxClientDriver;soapmidas;dbexpress;inet;FireDACDBXDriver;CustomIPTransport;LockBox3DR;IndySystem;FireDACCommon;emsserverresource;bindcompdbx;rtl;DBXSqliteDriver;DataSnapFireDAC;FireDAC;xmlrtl;dsnap;DataSnapNativeClient;emshosting;FireDACCommonDriver;RadiantShapesFmx_Design;IndyIPClient;emsedge;bindcompfmx;fmxFireDAC;DataSnapCommon;fmxase;DzHTMLText_FMX;dbrtl;DBXInterBaseDriver;RadiantShapesFmx;bindcomp;inetstn;IndyCore;RESTBackendComponents;RESTComponents;IndyIPServer;dsnapxml;DataSnapClient;DataSnapProviderClient;emsclientfiredac;FireDACDSDriver;tethering;CloudService;FMXTee;soaprtl;soapserver;FireDACIBDriver;$(DCC_UsePackage)</DCC_UsePackage>
-        <VerInfo_Keys>package=com.embarcadero.$(MSBuildProjectName);label=$(MSBuildProjectName);versionCode=1;versionName=1.0.0;persistent=False;restoreAnyVersion=False;installLocation=auto;largeHeap=False;theme=TitleBar;hardwareAccelerated=true;apiKey=;minSdkVersion=23;targetSdkVersion=34</VerInfo_Keys>
+        <VerInfo_Keys>package=com.embarcadero.$(MSBuildProjectName);label=$(MSBuildProjectName);versionCode=1;versionName=1.0.0;persistent=False;restoreAnyVersion=False;installLocation=auto;largeHeap=False;theme=TitleBar;hardwareAccelerated=true;apiKey=;minSdkVersion=23;targetSdkVersion=35</VerInfo_Keys>
         <BT_BuildType>Debug</BT_BuildType>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <Android_LauncherIcon36>$(ProjectName).Artwork\Android\FM_LauncherIcon_36x36.png</Android_LauncherIcon36>
@@ -171,7 +171,7 @@
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Android64)'!=''">
         <DCC_UsePackage>fmx;DbxCommonDriver;bindengine;IndyIPCommon;emsclient;IndyProtocols;dbxcds;FmxTeeUI;FireDACSqliteDriver;DbxClientDriver;soapmidas;dbexpress;inet;FireDACDBXDriver;CustomIPTransport;LockBox3DR;IndySystem;FireDACCommon;emsserverresource;bindcompdbx;rtl;DBXSqliteDriver;DataSnapFireDAC;FireDAC;xmlrtl;dsnap;DataSnapNativeClient;vc2;emshosting;FireDACCommonDriver;RadiantShapesFmx_Design;IndyIPClient;emsedge;bindcompfmx;fmxFireDAC;FrameViewer;DataSnapCommon;DzHTMLText_FMX;dbrtl;DBXInterBaseDriver;RadiantShapesFmx;bindcomp;inetstn;IndyCore;RESTBackendComponents;RESTComponents;IndyIPServer;dsnapxml;DataSnapClient;DataSnapProviderClient;emsclientfiredac;FireDACDSDriver;tethering;CloudService;FMXTee;soaprtl;soapserver;FireDACIBDriver;$(DCC_UsePackage)</DCC_UsePackage>
-        <VerInfo_Keys>package=com.embarcadero.$(MSBuildProjectName);label=$(MSBuildProjectName);versionCode=1;versionName=1.0.0;persistent=False;restoreAnyVersion=False;installLocation=auto;largeHeap=False;theme=TitleBar;hardwareAccelerated=true;apiKey=;minSdkVersion=23;targetSdkVersion=34</VerInfo_Keys>
+        <VerInfo_Keys>package=com.embarcadero.$(MSBuildProjectName);label=$(MSBuildProjectName);versionCode=1;versionName=1.0.0;persistent=False;restoreAnyVersion=False;installLocation=auto;largeHeap=False;theme=TitleBar;hardwareAccelerated=true;apiKey=;minSdkVersion=23;targetSdkVersion=35</VerInfo_Keys>
         <BT_BuildType>Debug</BT_BuildType>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <Android_LauncherIcon36>$(ProjectName).Artwork\Android\FM_LauncherIcon_36x36.png</Android_LauncherIcon36>
@@ -326,6 +326,8 @@
         <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <VerInfo_Locale>1033</VerInfo_Locale>
+        <Icon_MainIcon>$(ProjectName).Artwork\Windows\AppIcon.ico</Icon_MainIcon>
+        <Icns_MainIcns>$(ProjectName).Artwork\Windows\AppIcon.icns</Icns_MainIcns>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1_Win64)'!=''">
         <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
@@ -374,7 +376,6 @@
             <Form>FormMain</Form>
             <FormType>fmx</FormType>
         </DCCReference>
-        <DCCReference Include="FMXVibration\FMX.Vibrate.pas"/>
         <DCCReference Include="HGM.FMX.Ani.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
@@ -1424,6 +1425,24 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
+                <DeployFile LocalName="FMXAudio\Bin\Linux64\libbass.so" Configuration="Debug" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteName>libbass.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="FMXAudio\Bin\Linux64\libbass.so" Configuration="Release" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteName>libbass.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="Linux64\Debug\MineSweeperFMX" Configuration="Debug" Class="ProjectOutput">
+                    <Platform Name="Linux64">
+                        <RemoteName>MineSweeperFMX</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployFile LocalName="Linux64\Release\MineSweeperFMX" Configuration="Release" Class="ProjectOutput">
                     <Platform Name="Linux64">
                         <RemoteName>MineSweeperFMX</RemoteName>
@@ -1450,6 +1469,13 @@
                     </Platform>
                 </DeployFile>
                 <DeployFile LocalName="sound\explosion.wav" Configuration="Debug" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\sound</RemoteDir>
+                        <RemoteName>explosion.wav</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="sound\explosion.wav" Configuration="Debug" Class="File">
                     <Platform Name="Win32">
                         <RemoteDir>.\sound</RemoteDir>
                         <RemoteName>explosion.wav</RemoteName>
@@ -1459,6 +1485,13 @@
                 <DeployFile LocalName="sound\explosion.wav" Configuration="Release" Class="File">
                     <Platform Name="Android64">
                         <RemoteDir>assets\internal\sound</RemoteDir>
+                        <RemoteName>explosion.wav</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="sound\explosion.wav" Configuration="Release" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\sound</RemoteDir>
                         <RemoteName>explosion.wav</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
@@ -1477,9 +1510,23 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
+                <DeployFile LocalName="sound\explosions.mp3" Configuration="Debug" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\sound</RemoteDir>
+                        <RemoteName>explosions.mp3</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployFile LocalName="sound\explosions.mp3" Configuration="Release" Class="File">
                     <Platform Name="Android64">
                         <RemoteDir>assets\internal\sound</RemoteDir>
+                        <RemoteName>explosions.mp3</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="sound\explosions.mp3" Configuration="Release" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\sound</RemoteDir>
                         <RemoteName>explosions.mp3</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
@@ -1491,9 +1538,23 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
+                <DeployFile LocalName="sound\flag.mp3" Configuration="Debug" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\sound</RemoteDir>
+                        <RemoteName>flag.mp3</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployFile LocalName="sound\flag.mp3" Configuration="Release" Class="File">
                     <Platform Name="Android64">
                         <RemoteDir>assets\internal\sound</RemoteDir>
+                        <RemoteName>flag.mp3</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="sound\flag.mp3" Configuration="Release" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\sound</RemoteDir>
                         <RemoteName>flag.mp3</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
@@ -1505,9 +1566,23 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
+                <DeployFile LocalName="sound\open.mp3" Configuration="Debug" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\sound</RemoteDir>
+                        <RemoteName>open.mp3</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployFile LocalName="sound\open.mp3" Configuration="Release" Class="File">
                     <Platform Name="Android64">
                         <RemoteDir>assets\internal\sound</RemoteDir>
+                        <RemoteName>open.mp3</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="sound\open.mp3" Configuration="Release" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\sound</RemoteDir>
                         <RemoteName>open.mp3</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
@@ -1519,9 +1594,23 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
+                <DeployFile LocalName="sound\open_around.mp3" Configuration="Debug" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\sound</RemoteDir>
+                        <RemoteName>open_around.mp3</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployFile LocalName="sound\open_around.mp3" Configuration="Release" Class="File">
                     <Platform Name="Android64">
                         <RemoteDir>assets\internal\sound</RemoteDir>
+                        <RemoteName>open_around.mp3</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="sound\open_around.mp3" Configuration="Release" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\sound</RemoteDir>
                         <RemoteName>open_around.mp3</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
@@ -1533,9 +1622,23 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
+                <DeployFile LocalName="sound\open_empty.mp3" Configuration="Debug" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\sound</RemoteDir>
+                        <RemoteName>open_empty.mp3</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployFile LocalName="sound\open_empty.mp3" Configuration="Release" Class="File">
                     <Platform Name="Android64">
                         <RemoteDir>assets\internal\sound</RemoteDir>
+                        <RemoteName>open_empty.mp3</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="sound\open_empty.mp3" Configuration="Release" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\sound</RemoteDir>
                         <RemoteName>open_empty.mp3</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
@@ -1547,9 +1650,23 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
+                <DeployFile LocalName="sound\start.mp3" Configuration="Debug" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\sound</RemoteDir>
+                        <RemoteName>start.mp3</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployFile LocalName="sound\start.mp3" Configuration="Release" Class="File">
                     <Platform Name="Android64">
                         <RemoteDir>assets\internal\sound</RemoteDir>
+                        <RemoteName>start.mp3</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="sound\start.mp3" Configuration="Release" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\sound</RemoteDir>
                         <RemoteName>start.mp3</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
@@ -1561,9 +1678,23 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
+                <DeployFile LocalName="sound\win.mp3" Configuration="Debug" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\sound</RemoteDir>
+                        <RemoteName>win.mp3</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployFile LocalName="sound\win.mp3" Configuration="Release" Class="File">
                     <Platform Name="Android64">
                         <RemoteDir>assets\internal\sound</RemoteDir>
+                        <RemoteName>win.mp3</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="sound\win.mp3" Configuration="Release" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\sound</RemoteDir>
                         <RemoteName>win.mp3</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
@@ -1679,6 +1810,16 @@
                     </Platform>
                     <Platform Name="Android64">
                         <RemoteDir>res\values-v31</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidSplashStylesV35">
+                    <Platform Name="Android">
+                        <RemoteDir>res\values-v35</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\values-v35</RemoteDir>
                         <Operation>1</Operation>
                     </Platform>
                 </DeployClass>

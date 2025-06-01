@@ -7,3 +7,4 @@
 *.zip
 /Android/Release/*
 *.~*
+/Win64/*

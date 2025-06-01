@@ -9,8 +9,6 @@ uses
   FMX.SpinBox, FMX.ListBox, FMX.Ani, System.Skia, FMX.Skia, FMX.TabControl,
   FMX.Objects, FMX.Player, System.Generics.Collections;
 
-
-
 {$IF DEFINED(ANDROID) OR DEFINED(IOS)}
   {$DEFINE MOBILE}
 {$ENDIF}
@@ -108,6 +106,40 @@ type
     PathSR: TPath;
     PathSL: TPath;
     PathSB: TPath;
+    Layout10: TLayout;
+    Rectangle3: TRectangle;
+    ButtonBackFromLB: TButton;
+    Layout11: TLayout;
+    Label7: TLabel;
+    Button5: TButton;
+    Button6: TButton;
+    Layout12: TLayout;
+    Button7: TButton;
+    Label9: TLabel;
+    Button8: TButton;
+    GridPanelLayout4: TGridPanelLayout;
+    Label10: TLabel;
+    ListBoxBoard: TListBox;
+    ListBoxItem1: TListBoxItem;
+    ListBoxItem2: TListBoxItem;
+    ListBoxItem3: TListBoxItem;
+    ListBoxItem4: TListBoxItem;
+    ListBoxItem5: TListBoxItem;
+    ListBoxItem6: TListBoxItem;
+    ListBoxItem7: TListBoxItem;
+    ListBoxItem8: TListBoxItem;
+    ListBoxItem9: TListBoxItem;
+    ListBoxItem10: TListBoxItem;
+    ListBoxItem11: TListBoxItem;
+    Layout13: TLayout;
+    ButtonLeaderBoard: TButton;
+    AnimatedImageClouds: TSkAnimatedImage;
+    LayoutBackground: TLayout;
+    RectangleSky: TRectangle;
+    Layout14: TLayout;
+    Path2: TPath;
+    Rectangle4: TRectangle;
+    Path3: TPath;
     procedure ButtonNewGameClick(Sender: TObject);
     procedure TimerTimer(Sender: TObject);
     procedure FormCreate(Sender: TObject);
@@ -125,6 +157,8 @@ type
     procedure ButtonSoundLeftClick(Sender: TObject);
     procedure ButtonAboutClick(Sender: TObject);
     procedure ScrollBoxFieldViewportPositionChange(Sender: TObject; const OldViewportPosition, NewViewportPosition: TPointF; const ContentSizeChanged: Boolean);
+    procedure ButtonBackFromLBClick(Sender: TObject);
+    procedure ButtonLeaderBoardClick(Sender: TObject);
   private
     FField: TGameField;
     FSize: Byte;
@@ -168,6 +202,7 @@ type
     procedure FOnCellMouseMove(Sender: TObject; Shift: TShiftState; X, Y: Single);
     procedure RecalcBombs(const ExX, ExY: Integer);
     procedure UpdateSound;
+    procedure JumpToLeaders;
   public
     procedure NewGame(const Size: Integer; Difficult: TGameDifficult);
     function GetSize: Integer;
@@ -247,6 +282,16 @@ begin
   TAnimator.AnimateFloat(LayoutRestart, 'Margins.Bottom', 0);
 end;
 
+procedure TFormMain.ButtonLeaderBoardClick(Sender: TObject);
+begin
+  JumpToLeaders;
+end;
+
+procedure TFormMain.JumpToLeaders;
+begin
+  TabControlMain.ActiveTab := TabItemRecords;
+end;
+
 procedure TFormMain.UpdateDifficult;
 begin
   case TGameDifficult(LabelDificult.Tag) of
@@ -285,6 +330,12 @@ end;
 procedure TFormMain.ButtonAboutClick(Sender: TObject);
 begin
   ShowMessage('Created by HemulGM');
+end;
+
+procedure TFormMain.ButtonBackFromLBClick(Sender: TObject);
+begin
+  JumpToStart;
+  EndGame;
 end;
 
 procedure TFormMain.ButtonDiffDownClick(Sender: TObject);
@@ -404,18 +455,18 @@ end;
 procedure TFormMain.ScrollBoxFieldViewportPositionChange(Sender: TObject; const OldViewportPosition, NewViewportPosition: TPointF; const ContentSizeChanged: Boolean);
 begin
   PathST.Visible :=
-        (ScrollBoxField.ContentBounds.Height > ScrollBoxField.Height) and
-        (ScrollBoxField.ViewportPosition.Y > (ScrollBoxField.Height - ScrollBoxField.ContentBounds.Height) / 2 + 10);
+    (ScrollBoxField.ContentBounds.Height > ScrollBoxField.Height) and
+    (ScrollBoxField.ViewportPosition.Y > (ScrollBoxField.Height - ScrollBoxField.ContentBounds.Height) / 2 + 10);
   PathSB.Visible :=
-        (ScrollBoxField.ContentBounds.Height > ScrollBoxField.Height) and
-        (ScrollBoxField.ViewportPosition.Y < (ScrollBoxField.ContentBounds.Height - ScrollBoxField.Height) / 2 - 10);
+    (ScrollBoxField.ContentBounds.Height > ScrollBoxField.Height) and
+    (ScrollBoxField.ViewportPosition.Y < (ScrollBoxField.ContentBounds.Height - ScrollBoxField.Height) / 2 - 10);
 
   PathSL.Visible :=
-        (ScrollBoxField.ContentBounds.Width > ScrollBoxField.Width) and
-        (ScrollBoxField.ViewportPosition.X > (ScrollBoxField.Width - ScrollBoxField.ContentBounds.Width) / 2 + 10);
+    (ScrollBoxField.ContentBounds.Width > ScrollBoxField.Width) and
+    (ScrollBoxField.ViewportPosition.X > (ScrollBoxField.Width - ScrollBoxField.ContentBounds.Width) / 2 + 10);
   PathSR.Visible :=
-        (ScrollBoxField.ContentBounds.Width > ScrollBoxField.Width) and
-        (ScrollBoxField.ViewportPosition.X < (ScrollBoxField.ContentBounds.Width - ScrollBoxField.Width) / 2 - 10);
+    (ScrollBoxField.ContentBounds.Width > ScrollBoxField.Width) and
+    (ScrollBoxField.ViewportPosition.X < (ScrollBoxField.ContentBounds.Width - ScrollBoxField.Width) / 2 - 10);
 end;
 
 procedure TFormMain.Sound(const FileName: string);
@@ -423,7 +474,7 @@ begin
   if LabelSound.Tag <> 1 then
     Exit;
   var Root: string;
-  {$IFDEF MSWINDOWS}
+  {$IFNDEF MOBILE}
   Root := TPath.GetLibraryPath;
   {$ELSE}
   Root := TPath.GetDocumentsPath;
@@ -526,31 +577,28 @@ begin
     Exit;
   if not FField[X, Y].Closed then
     Exit;
-  if FField[X, Y].Closed then
+  if FField[X, Y].Flag then
   begin
-    if not FField[X, Y].Flag then
+    LabelMines.Tag := LabelMines.Tag + 1;
+    LabelMines.Text := LabelMines.Tag.ToString;
+    FField[X, Y].Flag := False;
+    FField[X, Y].Button.StyleLookup := 'cell_closed';
+  end
+  else
+  begin
+    if LabelMines.Tag <= 0 then
+      Exit;
+    LabelMines.Tag := LabelMines.Tag - 1;
+    LabelMines.Text := LabelMines.Tag.ToString;
+    FField[X, Y].Flag := True;
+    FField[X, Y].Button.StyleLookup := 'cell_flag';
+    var ScaleAni: TRectAnimation;
+    if FField[X, Y].Button.FindStyleResource<TRectAnimation>('scale', ScaleAni) then
     begin
-      if LabelMines.Tag <= 0 then
-        Exit;
-      LabelMines.Tag := LabelMines.Tag - 1;
-      LabelMines.Text := LabelMines.Tag.ToString;
-      FField[X, Y].Flag := True;
-      FField[X, Y].Button.StyleLookup := 'cell_flag';
-      var ScaleAni: TRectAnimation;
-      if FField[X, Y].Button.FindStyleResource<TRectAnimation>('scale', ScaleAni) then
-      begin
-        FField[X, Y].Button.BringToFront;
-        ScaleAni.Start;
-      end;
-      Sound('flag.mp3');
-    end
-    else
-    begin
-      LabelMines.Tag := LabelMines.Tag + 1;
-      LabelMines.Text := LabelMines.Tag.ToString;
-      FField[X, Y].Flag := False;
-      FField[X, Y].Button.StyleLookup := 'cell_closed';
+      FField[X, Y].Button.BringToFront;
+      ScaleAni.Start;
     end;
+    Sound('flag.mp3');
   end;
 end;
 
@@ -707,9 +755,8 @@ begin
 end;
 
 procedure TFormMain.FOnCellMouseDown(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Single);
-var
-  Btn: TCellControl absolute Sender;
 begin
+  var Btn := Sender as TCellControl;
   if Button = TMouseButton.mbLeft then
   begin
     SetCaptured(Btn);
@@ -720,9 +767,8 @@ begin
 end;
 
 procedure TFormMain.FOnCellMouseMove(Sender: TObject; Shift: TShiftState; X, Y: Single);
-var
-  Btn: TCellControl absolute Sender;
 begin
+  var Btn := Sender as TCellControl;
   var Pt := Btn.ConvertLocalPointTo(ScrollBoxField, TPointF.Create(X, Y));
   if FCellDown and (Abs(Pt.Distance(FCellDownPoint)) > 10) then
   begin
@@ -734,9 +780,8 @@ begin
 end;
 
 procedure TFormMain.FOnCellMouseUp(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Single);
-var
-  Btn: TCellControl absolute Sender;
 begin
+  var Btn := Sender as TCellControl;
   var Pt := Btn.ConvertLocalPointTo(ScrollBoxField, TPointF.Create(X, Y));
   FCellDown := False;
   SetCaptured(nil);
@@ -748,15 +793,14 @@ begin
   end;
   var BX := Btn.StylesData['X'].AsInteger;
   var BY := Btn.StylesData['Y'].AsInteger;
-  if ssDouble in Shift then
-    if Button = TMouseButton.mbLeft then
-    begin
-      DoOpenAround(BX, BY);
-      Exit;
-    end;
   case Button of
     TMouseButton.mbLeft:
       begin
+        if ssDouble in Shift then
+        begin
+          DoOpenAround(BX, BY);
+          Exit;
+        end;
         DoClick(BX, BY, 0);
         if CheckForWin then
           DoWin;
@@ -929,11 +973,13 @@ begin
   begin
     LayoutMenu.Opacity := 0;
     TAnimator.AnimateFloat(LayoutMenu, 'Opacity', 1);
+    TAnimator.AnimateFloat(RectangleSky, 'Margins.Top', 0);
   end;
   if TabControlMain.ActiveTab = TabItemGame then
   begin
     LayoutGame.Opacity := 0;
     TAnimator.AnimateFloat(LayoutGame, 'Opacity', 1);
+    TAnimator.AnimateFloat(RectangleSky, 'Margins.Top', -320);
   end;
 end;
 

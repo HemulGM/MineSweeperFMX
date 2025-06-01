@@ -7,7 +7,6 @@ uses
   FMX.Forms,
   FMX.Skia,
   MineSweeper.Main in 'MineSweeper.Main.pas' {FormMain},
-  FMX.Vibrate in 'FMXVibration\FMX.Vibrate.pas',
   HGM.FMX.Ani in 'HGM.FMX.Ani.pas';
 
 {$R *.res}

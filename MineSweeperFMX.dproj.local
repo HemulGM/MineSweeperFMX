@@ -1,33 +1,35 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <BorlandProject>
 	<Transactions>
+    <Transaction>1899.12.30 00:00:00.000.180,D:\Projects\#Default\Unit7.pas=D:\Projects\#Games\MinerFMX\Miner.Main.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.917,D:\Projects\#Default\Project70.dproj=D:\Projects\#Games\MinerFMX\MinerAppFMX.dproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.530,D:\Projects\#Games\MinerFMX\Miner.Main.fmx=D:\Projects\#Games\MinerFMX\MineSweeper.Main.fmx</Transaction>
     <Transaction>1899.12.30 00:00:00.000.519,=D:\Projects\#Default\Unit7.pas</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.530,D:\Projects\#Games\MinerFMX\MineSweeper.Main.pas=D:\Projects\#Games\MinerFMX\Miner.Main.pas</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.180,D:\Projects\#Games\MinerFMX\Miner.Main.fmx=D:\Projects\#Default\Unit7.fmx</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.604,=D:\Projects\#Games\MinerFMX\FMXAudio\Sources\FMX.BASS.AAC.pas</Transaction>
     <Transaction>1899.12.30 00:00:00.000.843,D:\Projects\#Games\MinerFMX\FMXAudio\Sources\FMX.BASS.AAC.pas=</Transaction>
     <Transaction>1899.12.30 00:00:00.000.379,=D:\Projects\#Games\MinerFMX\HGM.FMX.Ani.pas</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.530,D:\Projects\#Games\MinerFMX\MineSweeper.Main.fmx=D:\Projects\#Games\MinerFMX\Miner.Main.fmx</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.254,=D:\Projects\#Games\MinerFMX\FMXAudio\Sources\FMX.Player.pas</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.039,D:\Projects\#Games\MinerFMX\SapperAppFMX.dproj=D:\Projects\#Games\MinerFMX\MinerAppFMX.dproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.930,D:\Projects\#Games\MinerFMX\SapperAppFMX.dproj=D:\Projects\#Games\MinerFMX\MineSweeperFMX.dproj</Transaction>
     <Transaction>1899.12.30 00:00:00.000.421,=D:\Projects\#Games\MinerFMX\sound\explosion.wav</Transaction>
     <Transaction>1899.12.30 00:00:00.000.140,D:\Projects\#Games\MinerFMX\sound\explosion.wav=</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.037,D:\Projects\#Games\MinerFMX\FMXAudio\Sources\FMX.Player.pas=</Transaction>
     <Transaction>1899.12.30 00:00:00.000.168,=D:\Projects\#Games\MinerFMX\FMXAudio\Sources\FMX.BASS.Plugins.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.254,=D:\Projects\#Games\MinerFMX\FMXAudio\Sources\FMX.Player.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.037,D:\Projects\#Games\MinerFMX\FMXAudio\Sources\FMX.Player.pas=</Transaction>
     <Transaction>1899.12.30 00:00:00.000.016,D:\Projects\#Games\MinerFMX\FMXAudio\Sources\FMX.BASS.Plugins.pas=</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.604,=D:\Projects\#Games\MinerFMX\FMXAudio\Sources\FMX.BASS.AAC.pas</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.445,D:\Projects\#Games\MinerFMX\Unit1.pas=D:\Projects\#Games\MinerFMX\FMXVibration\FMX.Vibrate.pas</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.412,=D:\Projects\#Games\MinerFMX\Unit1.pas</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.867,D:\Projects\#Games\MinerFMX\Unit1.pas=D:\Projects\#Games\MinerFMX\MineSweeper.ThreadObjectList.pas</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.917,D:\Projects\#Games\MinerFMX\MinerAppFMX.dproj=D:\Projects\#Default\Project70.dproj</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.930,D:\Projects\#Games\MinerFMX\MineSweeperFMX.dproj=D:\Projects\#Games\MinerFMX\SapperAppFMX.dproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.530,D:\Projects\#Games\MinerFMX\Miner.Main.pas=D:\Projects\#Games\MinerFMX\MineSweeper.Main.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.180,D:\Projects\#Default\Unit7.fmx=D:\Projects\#Games\MinerFMX\Miner.Main.fmx</Transaction>
     <Transaction>1899.12.30 00:00:00.000.306,=D:\Projects\#Games\MinerFMX\Unit1.pas</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.224,=D:\Projects\#Games\MinerFMX\FMXAudio\Sources\FMX.BASS.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.214,=D:\Projects\#Games\MinerFMX\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.039,D:\Projects\#Games\MinerFMX\MinerAppFMX.dproj=D:\Projects\#Games\MinerFMX\SapperAppFMX.dproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.445,D:\Projects\#Games\MinerFMX\FMXVibration\FMX.Vibrate.pas=D:\Projects\#Games\MinerFMX\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.392,D:\Projects\#Games\MinerFMX\FMXVibration\FMX.Vibrate.pas=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.867,D:\Projects\#Games\MinerFMX\MineSweeper.ThreadObjectList.pas=D:\Projects\#Games\MinerFMX\Unit1.pas</Transaction>
     <Transaction>1899.12.30 00:00:00.000.418,=D:\Projects\#Games\MinerFMX\Kastri\DW.AudioPlayer.pas</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.689,D:\Projects\#Games\MinerFMX\Kastri\DW.AudioPlayer.pas=</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.180,D:\Projects\#Games\MinerFMX\Miner.Main.pas=D:\Projects\#Default\Unit7.pas</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.977,D:\Projects\#Games\MinerFMX\FMXAudio\Sources\FMX.BASS.pas=</Transaction>
     <Transaction>1899.12.30 00:00:00.000.143,=D:\Projects\#Games\MinerFMX\FMXAudio\Sources\FMX.BASS.Classes.pas</Transaction>
     <Transaction>1899.12.30 00:00:00.000.929,D:\Projects\#Games\MinerFMX\FMXAudio\Sources\FMX.BASS.Classes.pas=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.689,D:\Projects\#Games\MinerFMX\Kastri\DW.AudioPlayer.pas=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.412,=D:\Projects\#Games\MinerFMX\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.224,=D:\Projects\#Games\MinerFMX\FMXAudio\Sources\FMX.BASS.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.977,D:\Projects\#Games\MinerFMX\FMXAudio\Sources\FMX.BASS.pas=</Transaction>
   </Transactions>
 	<ActiveMobileDevice>
 		<NoProfile Android64=""/>
